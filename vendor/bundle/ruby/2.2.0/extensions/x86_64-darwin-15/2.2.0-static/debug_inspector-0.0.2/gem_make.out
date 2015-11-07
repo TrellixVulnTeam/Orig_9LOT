@@ -1,0 +1,11 @@
+/Users/Shota/.rbenv/versions/2.2.3/bin/ruby -r ./siteconf20151107-19417-1osetu1.rb extconf.rb
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling debug_inspector.c
+linking shared-object debug_inspector.bundle
+
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 debug_inspector.bundle ./.gem.20151107-19417-1b6n4tq
