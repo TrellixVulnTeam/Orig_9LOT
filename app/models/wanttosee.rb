@@ -1,0 +1,2 @@
+class Wanttosee < Proposal
+end

@@ -1,0 +1,17 @@
+<div class="action">
+  <% if current_user.like? property %>
+      <%#= render 'properties/unlike' , property: property %>
+  <% else %>
+      <%#= render 'properties/like' , property: property %>
+  <% end %>
+
+  <% if current_user.dislike? item %>
+      <%#= render 'properties/undislike' , property: property %>
+  <% else %>
+      <%#= render 'propertiess/dislike' , property: property %>
+  <% end %>
+
+  <% unless current_page?(property) %>
+      <%#= link_to "詳細" , property , class: "btn btn-info btn-sm" %>
+  <% end %>
+</div>

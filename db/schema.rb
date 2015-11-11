@@ -11,7 +11,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151107093522) do
+ActiveRecord::Schema.define(version: 20151109214249) do
+
+  create_table "properties", force: :cascade do |t|
+    t.string   "name",                  null: false
+    t.string   "address",               null: false
+    t.string   "rent",                  null: false
+    t.string   "administrativeexpense", null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.string   "image"
+  end
+
+  create_table "proposals", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "property_id"
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
+    t.string   "type",        default: "Nonevaluation"
+  end
+
+  create_table "userhopes", force: :cascade do |t|
+    t.string   "place"
+    t.string   "rent"
+    t.string   "breadth"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",          null: false

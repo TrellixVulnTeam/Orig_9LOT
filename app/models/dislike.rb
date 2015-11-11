@@ -1,0 +1,2 @@
+class Dislike < Proposal
+end

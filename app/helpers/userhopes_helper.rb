@@ -1,0 +1,2 @@
+module UserhopesHelper
+end

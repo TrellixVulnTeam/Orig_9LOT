@@ -1,0 +1,2 @@
+class Delete < Proposal
+end
