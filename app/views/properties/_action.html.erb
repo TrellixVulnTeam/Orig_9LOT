@@ -5,13 +5,13 @@
       <%#= render 'properties/like' , property: property %>
   <% end %>
 
-  <% if current_user.dislike? item %>
+  <% if current_user.dislike? property %>
       <%#= render 'properties/undislike' , property: property %>
   <% else %>
       <%#= render 'propertiess/dislike' , property: property %>
   <% end %>
 
-  <% unless current_page?(property) %>
+  <%# unless current_page?(property) %>
       <%#= link_to "詳細" , property , class: "btn btn-info btn-sm" %>
-  <% end %>
+  <%# end %>
 </div>
