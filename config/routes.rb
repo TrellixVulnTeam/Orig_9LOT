@@ -7,6 +7,7 @@ Rails.application.routes.draw do
                                     :registrations => "users/registrations"}
   resources :proposals, only: [:create, :destroy]
   resources :properties, only: [:create, :destroy,:show]
+  resources :comments, only: [:create, :destroy,:show]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

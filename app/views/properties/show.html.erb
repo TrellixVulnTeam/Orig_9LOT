@@ -24,6 +24,15 @@
 
 
 <div class = comment>
-  
+  <%= form_for @comment_new do |f| %>
+      <p class="field form-group">
+      <%= f.text_field :comment, class: "form-control" %>
+      </p>
+      <%= hidden_field params[:type] %>
+      <%= hidden_field params[:id] %>
+      <p>
+      <%= f.submit "コメントする", class: "btn btn-primary" %>
+      </p>
+  <% end %>
 
 </div>
