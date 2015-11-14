@@ -50,7 +50,7 @@ gem 'rails_admin'
 
 group :development, :test do
   gem 'rails-erd'
-
+  gem 'pry-byebug'
   gem 'pry'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

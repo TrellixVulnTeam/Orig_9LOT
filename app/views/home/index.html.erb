@@ -17,7 +17,7 @@
           </div>
           <div class="detail">
             <p class="title">
-              <%= link_to property.name ,property_path(property)%>
+              <%= link_to property.name ,property_path(property,type: "Like")%>
             </p>
           </div>
           <%= render 'properties/action' , property: property if user_signed_in? %>
@@ -25,3 +25,29 @@
     <% end %>
   </div>
 </div>
+
+<% if false %>
+    <div class="container">
+      <div class="container-inner inner-default clearfix">
+        <% @properties.each do |property| %>
+            <div class="item-box">
+              <div class="image">
+                <div class="img-wrap">
+                  <% if property.image.present? %>
+                      <%= image_tag(property.image , alt: property.name) %>
+                  <% else %>
+                      <%= image_tag("no-image.png" , alt: property.name) %>
+                  <% end %>
+                </div>
+              </div>
+              <div class="detail">
+                <p class="title">
+                  <%= link_to property.name ,property_path(property),type: "Like"%>
+                </p>
+              </div>
+              <%= render 'properties/action' , property: property if user_signed_in? %>
+            </div>
+        <% end %>
+      </div>
+    </div>
+<% end %>
