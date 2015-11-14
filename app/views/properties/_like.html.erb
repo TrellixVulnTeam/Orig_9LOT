@@ -1,4 +1,4 @@
-<%= link_to "" , ownerships_path(property_id: property.id , type: "Like") ,
-            :class => "like-#{item.id} btn-want btn btn-danger btn-sm like",
+<%= link_to "" , proposals_path(property_id: property.id , type: "Like") ,
+            :class => "like-#{property.id} btn btn-want btn btn-default btn-ghost btn-sm like",
             :remote => true,
             :method => :post %>

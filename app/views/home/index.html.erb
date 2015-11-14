@@ -17,7 +17,7 @@
           </div>
           <div class="detail">
             <p class="title">
-              <%= property.name %>
+              <%= link_to property.name ,property_path(property)%>
             </p>
           </div>
           <%= render 'properties/action' , property: property if user_signed_in? %>

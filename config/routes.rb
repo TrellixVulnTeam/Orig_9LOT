@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { :omniauth_callbacks => "users/omniauth_callbacks",
                                     :registrations => "users/registrations"}
   resources :proposals, only: [:create, :destroy]
+  resources :properties, only: [:create, :destroy,:show]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

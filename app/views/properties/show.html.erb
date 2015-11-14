@@ -1,0 +1,18 @@
+<%= @property.id %>
+<br>
+<%= @property.name %>
+<br>
+<%= @property.address %>
+<br>
+<%= @property.rent %>
+<br>
+<%= @property.administrativeexpense %>
+<br>
+<% if @property.image.present? %>
+    <%= image_tag(@property.image , alt: @property.name) %>
+<% else %>
+    <%= image_tag("no-image.png" , alt: @property.name) %>
+<% end %>
+<br>
+以下にコメントの表示
+<br>

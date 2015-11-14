@@ -50,11 +50,11 @@ class User < ActiveRecord::Base
   ## LIKE DISLIKE実装
   def like(property)
     likes.find_or_create_by(property_id: property.id)
-    if nonevaluations.find_by(property_id: property.id)
-      nonevaluations.destroy(property_id: property.id)
+    if nonevaluation?(property)
+      unnonevaluation(property)
     end
-    if dislikes.find_by(property_id: property.id)
-      dislikes.destroy(property_id: property.id)
+    if dislike?(property)
+      undislike(property)
     end
   end
 
@@ -63,13 +63,14 @@ class User < ActiveRecord::Base
   end
   def dislike(property)
     dislikes.find_or_create_by(property_id: property.id)
-    if nonevaluations.find_by(property_id: property.id)
-      nonevaluations.destroy(property_id: property.id)
+    if nonevaluation?(property)
+      unnonevaluation(property)
     end
-    if likes.find_by(property_id: property.id)
-      likes.destroy(property_id: property.id)
+    if like?(property)
+      unlike(property)
     end
   end
+
   def undislike(property)
     dislikes.find_by(property_id: property.id).destroy
   end
@@ -93,5 +94,8 @@ class User < ActiveRecord::Base
   end
   def nonevaluation?(property)
     nonevaluation_properties.include?(property)
+  end
+  def proposal?(property)
+    properties.include?(property)
   end
 end

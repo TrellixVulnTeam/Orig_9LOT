@@ -1,9 +1,9 @@
 <div class="action">
-  <% if current_user.like? property %>
+  <%# if current_user.like? property %>
       <%#= render 'properties/unlike' , property: property %>
-  <% else %>
-      <%#= render 'properties/like' , property: property %>
-  <% end %>
+  <%# else %>
+      <%= render 'properties/like' , property: property %>
+  <%# end %>
 
   <% if current_user.dislike? property %>
       <%#= render 'properties/undislike' , property: property %>

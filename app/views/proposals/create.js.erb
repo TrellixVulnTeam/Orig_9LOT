@@ -1,0 +1,6 @@
+<% if params[:type] == "Like" %>
+$(".like-<%= @property.id %>").replaceWith("<%= escape_javascript(render('properties/unlike' , property: @property)) %>");
+$("#have_count").html('<%= current_user.like_properties.count %>');
+<% end %>
+
+$('.btn-have,.btn-want').removeAttr('disabled');
